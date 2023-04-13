@@ -1,0 +1,41 @@
+@import "@/styles/settings/_settings";
+
+.heroContainer {
+  
+  display: grid;
+  grid-gap: 3em;
+
+  @media (min-width: $breakpoint-large) {
+    grid-template-columns: 4fr 6fr;
+  }
+
+}
+
+.heroTitle {
+
+  text-transform: uppercase;
+  font-size: 1em;
+  padding-bottom: .5em;
+  border-bottom: solid 2px $color-red;
+  margin-top: 3em;
+  margin-bottom: 2em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+}
+
+.teaser {
+  font-size: 1.2em;
+}
+
+.unlock {
+  
+  margin-top: 1.5em;
+
+  @media (min-width: $breakpoint-large) {
+    margin-top: 3em;
+  }
+
+}

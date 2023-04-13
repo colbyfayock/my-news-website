@@ -1,0 +1,24 @@
+@import "@/styles/settings/_settings";
+
+.heroContainer {
+  
+  display: grid;
+  grid-gap: 3em;
+
+  @media (min-width: $breakpoint-large) {
+    grid-template-columns: 6fr 4fr;
+  }
+
+}
+
+.heroTitle {
+  text-transform: uppercase;
+  font-size: 1em;
+  padding-bottom: .5em;
+  border-bottom: solid 2px $color-red;
+  margin-bottom: 2em;
+}
+
+.unlock {
+  text-align: center;
+}
