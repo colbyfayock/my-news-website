@@ -19,6 +19,8 @@
     "sass": "^1.60.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.32.3"
+    "@applitools/eyes-playwright": "^1.15.1",
+    "@playwright/test": "^1.32.3",
+    "dotenv": "^16.0.3"
   }
 }
