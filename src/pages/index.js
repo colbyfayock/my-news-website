@@ -8,11 +8,11 @@ import PostGrid from '@/components/PostGrid';
 import PostCard from '@/components/PostCard';
 import Unlock from '@/components/Unlock';
 
-import posts from '@/data/posts';
+import postsData from '@/data/posts';
 
 import styles from '@/styles/Home.module.scss'
 
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <Layout>
       <Head>
@@ -49,4 +49,12 @@ export default function Home() {
       </Section>
     </Layout>
   )
+}
+
+export async function getServerSideProps() {
+  return {
+    props: {
+      posts: postsData.sort(() => 0.5 - Math.random())
+    }
+  }
 }

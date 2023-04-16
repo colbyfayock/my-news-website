@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-import { Eyes, Target } from '@applitools/eyes-playwright';
+import { Eyes, Target, MatchLevel } from '@applitools/eyes-playwright';
 
 test('it should have a title', async ({ page }) => {
   await page.goto('http://localhost:3000');
@@ -9,6 +9,7 @@ test('it should have a title', async ({ page }) => {
 test('it should load the homepage', async ({ page }) => {
   await page.goto('http://localhost:3000');
   const eyes = new Eyes();
+  eyes.setMatchLevel(MatchLevel.Layout);
   await eyes.open(page, 'The Hundred', 'App');
   await eyes.check(Target.window().fully())
   await eyes.close();
@@ -18,6 +19,9 @@ test('it should navigate to an article then signup', async ({ page }) => {
   await page.goto('http://localhost:3000');
 
   const eyes = new Eyes();
+
+  eyes.setMatchLevel(MatchLevel.Layout);
+
   await eyes.open(page, 'The Hundred', 'Signup');
   await eyes.check('Home', Target.window().fully())
 
